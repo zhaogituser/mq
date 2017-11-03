@@ -15,15 +15,11 @@
             <element id="module-output" name="mq" />
           </element>
           <element id="directory" name="lib">
-            <element id="library" level="project" name="Maven: com.aliyun.openservices:ons-client:1.1.11" />
-            <element id="library" level="project" name="Maven: com.alibaba.rocketmq:rocketmq-client:3.4.6" />
-            <element id="library" level="project" name="Maven: com.alibaba.rocketmq:rocketmq-common:3.4.6" />
-            <element id="library" level="project" name="Maven: com.alibaba.rocketmq:rocketmq-remoting:3.4.6" />
-            <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.3" />
-            <element id="library" level="project" name="Maven: io.netty:netty-all:4.0.29.Final" />
-            <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.5" />
-            <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
-            <element id="library" level="project" name="Maven: com.aliyun.openservices:ons-api:1.1.11" />
+            <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.7" />
+            <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.7" />
+            <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.7.7" />
+            <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+            <element id="library" level="project" name="Maven: com.aliyun.openservices:ons-client:1.7.0.Final" />
           </element>
         </element>
         <element id="directory" name="META-INF">
@@ -100,6 +96,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mq.iml" filepath="$PROJECT_DIR$/mq.iml" />
     </modules>
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://www.springframework.org/schema/beans" location="D:/spring-framework-4.0.5.RELEASE-schema/beans/spring-beans-4.0.xsd" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
@@ -209,92 +208,15 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="Maven: com.alibaba.rocketmq:rocketmq-client:3.4.6">
+    <library name="Maven: com.aliyun.openservices:ons-client:1.7.0.Final">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-client/3.4.6/rocketmq-client-3.4.6.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.7.0.Final/ons-client-1.7.0.Final.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-client/3.4.6/rocketmq-client-3.4.6-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.7.0.Final/ons-client-1.7.0.Final-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-client/3.4.6/rocketmq-client-3.4.6-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.alibaba.rocketmq:rocketmq-common:3.4.6">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-common/3.4.6/rocketmq-common-3.4.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-common/3.4.6/rocketmq-common-3.4.6-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-common/3.4.6/rocketmq-common-3.4.6-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.alibaba.rocketmq:rocketmq-remoting:3.4.6">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-remoting/3.4.6/rocketmq-remoting-3.4.6.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-remoting/3.4.6/rocketmq-remoting-3.4.6-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/rocketmq/rocketmq-remoting/3.4.6/rocketmq-remoting-3.4.6-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.alibaba:fastjson:1.2.3">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.3/fastjson-1.2.3.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.3/fastjson-1.2.3-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/alibaba/fastjson/1.2.3/fastjson-1.2.3-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.aliyun.openservices:ons-api:1.1.11">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-api/1.1.11/ons-api-1.1.11.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-api/1.1.11/ons-api-1.1.11-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-api/1.1.11/ons-api-1.1.11-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: com.aliyun.openservices:ons-client:1.1.11">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.1.11/ons-client-1.1.11.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.1.11/ons-client-1.1.11-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.1.11/ons-client-1.1.11-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: commons-codec:commons-codec:1.9">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.9/commons-codec-1.9.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.9/commons-codec-1.9-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/commons-codec/commons-codec/1.9/commons-codec-1.9-sources.jar!/" />
-      </SOURCES>
-    </library>
-    <library name="Maven: io.netty:netty-all:4.0.29.Final">
-      <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final.jar!/" />
-      </CLASSES>
-      <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final-javadoc.jar!/" />
-      </JAVADOC>
-      <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/io/netty/netty-all/4.0.29.Final/netty-all-4.0.29.Final-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/com/aliyun/openservices/ons-client/1.7.0.Final/ons-client-1.7.0.Final-sources.jar!/" />
       </SOURCES>
     </library>
     <library name="Maven: junit:junit:3.8.1">
@@ -308,16 +230,74 @@
         <root url="jar://$MAVEN_REPOSITORY$/junit/junit/3.8.1/junit-3.8.1-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="Maven: org.slf4j:slf4j-api:1.7.5">
+    <library name="Maven: log4j:log4j:1.2.17">
       <CLASSES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/" />
       </CLASSES>
       <JAVADOC>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5-javadoc.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-javadoc.jar!/" />
       </JAVADOC>
       <SOURCES>
-        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5-sources.jar!/" />
+        <root url="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17-sources.jar!/" />
       </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:jcl-over-slf4j:1.7.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:slf4j-api:1.7.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Maven: org.slf4j:slf4j-log4j12:1.7.7">
+      <CLASSES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-log4j12/1.7.7/slf4j-log4j12-1.7.7-sources.jar!/" />
+      </SOURCES>
+    </library>
+    <library name="Spring-4.3.12.RELEASE" type="spring">
+      <properties version="4.3.12.RELEASE" />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/spring-instrument-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-instrument-tomcat-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-aspects-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-expression-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-jms-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-context-support-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-aop-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-jdbc-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-oxm-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-messaging-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/commons-logging-1.2.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/aopalliance-1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-orm-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-tx-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-beans-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-test-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-core-4.3.12.RELEASE.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/spring-context-4.3.12.RELEASE.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
   <component name="masterDetails">

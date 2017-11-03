@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="demoLocalTransactionChecker" class="com.mq.transaction.DemoLocalTransactionChecker" />
+
+    <bean id="transactionProducer" class="com.aliyun.openservices.ons.api.bean.TransactionProducerBean" init-method="start"
+          destroy-method="shutdown" >
+        <property name="properties">
+            <props>
+                <prop key="ProducerId">OYD_MQ</prop>
+                <prop key="AccessKey">xxx</prop>
+                <prop key="SecretKey">xxx</prop>
+                <prop key="ONSAddr">xx</prop>
+            </props>
+        </property>
+        <property name="localTransactionChecker" ref="demoLocalTransactionChecker"/>
+    </bean>
+</beans>

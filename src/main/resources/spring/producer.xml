@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+        <bean id="producer" class="com.aliyun.openservices.ons.api.bean.ProducerBean" init-method="start" destroy-method="shutdown">
+            <!--Spring 接入方式支持Java SDK支持的所有配置项-->
+            <property name="properties"><!--生产者配置信息-->
+                <props>
+                    <prop key="ProducerId">OYD_MQ</prop>
+                    <prop key="AccessKey">xx</prop>
+                    <prop key="SecretKey">xx</prop>
+                    <prop key="ONSAddr">xx</prop>
+                </props>
+            </property>
+
+        </bean>
+</beans>

@@ -66,8 +66,6 @@ public class CancellableReader {
         }
     }
 
-
-
     public synchronized void cancelReaderThread() {
         if (readerThread != null) readerThread.interrupt();
         closeFile();

@@ -66,16 +66,7 @@ public class CancellableReader {
         }
     }
 
-    private void process(int c) throws IOException {
-//        FileOutputStream fout=new FileOutputStream("F:\\cdcard\\three.xml");
-//        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fout);
-//        long start=System.currentTimeMillis();
-//        while (c!=-1){
-//            bufferedOutputStream.write(bytes);
-//        }
-//        long end=System.currentTimeMillis();
-//        System.out.println("花费时间为:"+(start-end)/1000+"秒");
-    }
+
 
     public synchronized void cancelReaderThread() {
         if (readerThread != null) readerThread.interrupt();

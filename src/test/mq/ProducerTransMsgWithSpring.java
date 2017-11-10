@@ -21,7 +21,7 @@ public class ProducerTransMsgWithSpring {
             System.out.println("执行本地事务");
             return TransactionStatus.CommitTransaction;//根据本地事务执行结果来返回不同的TransactionStatus
         }, null);
-        /*  lambda expression 
+        /*  lambda expression
         SendResult sendResult1 = transactionProducer.send(message, new LocalTransactionExecuter() {
             @Override
             public TransactionStatus execute(Message msg, Object arg) {
@@ -29,6 +29,5 @@ public class ProducerTransMsgWithSpring {
                 return TransactionStatus.CommitTransaction;//根据本地事务执行结果来返回不同的TransactionStatus
             }
         }, null);*/
-
     }
 }

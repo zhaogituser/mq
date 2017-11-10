@@ -5,6 +5,7 @@ package com.test;
  */
 public class TestB {
     public static void main(String[] args) {
-        System.out.println("这是分支Testb");
+        System.out.println("这是分支dev");
+        System.out.println("生产");
     }
 }

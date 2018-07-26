@@ -1,0 +1,196 @@
+import org.apache.shiro.codec.CodecException;
+import org.apache.shiro.codec.Hex;
+import org.apache.shiro.util.ByteSource;
+
+import java.io.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
+/**
+ * created by 2018.07.26
+ */
+public class MD5Util {
+
+    public final static String md5(String content) {
+        //用于加密的字符
+        char[] md5String = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                'A', 'B', 'C', 'D', 'E', 'F'};
+        try {
+            //使用平台的默认字符集将此 String 编码为 byte序列，并将结果存储到一个新的 byte数组中
+            byte[] btInput = content.getBytes();
+
+            //信息摘要是安全的单向哈希函数，它接收任意大小的数据，并输出固定长度的哈希值。
+            MessageDigest mdInst = MessageDigest.getInstance("MD5");
+
+            //MessageDigest对象通过使用 update方法处理数据， 使用指定的byte数组更新摘要
+            mdInst.update(btInput);
+
+            // 摘要更新之后，通过调用digest（）执行哈希计算，获得密文
+            byte[] md = mdInst.digest();
+
+            // 把密文转换成十六进制的字符串形式
+            int j = md.length;
+            char[] str = new char[j * 2];
+            int k = 0;
+            for (int i = 0; i < j; i++) {   //  i = 0
+                byte byte0 = md[i];  //95
+                str[k++] = md5String[byte0 >>> 4 & 0xf];    //    5   0
+                str[k++] = md5String[byte0 & 0xf];   //   F
+            }
+
+            //返回经过加密后的字符串
+            return new String(str);
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        ByteSource sourceBytes = ByteSource.Util.bytes("123456");
+
+
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+//        if (salt != null) {
+//            digest.reset();
+//            digest.update(salt);
+//        }
+        byte[] hashed = digest.digest("123456".getBytes(PREFERRED_ENCODING));
+//        int iterations = hashIterations - 1; //already hashed once above
+        //iterate remaining number:
+//        for (int i = 0; i < iterations; i++) {
+//            digest.reset();
+//            hashed = digest.digest(hashed);
+//        }
+
+        System.out.println(md5("123456"));
+        String hexString=Hex.encodeToString(hashed);
+        System.out.println("Hex class provide:"+hexString);
+        System.out.println("verify:E10ADC3949BA59ABBE56E057F20F883E");
+
+        System.out.println(16 <<1);
+
+        byte [] bytes=md5withsaltToByte("MD5","123456",null,1,"UTF-8");
+
+
+        System.out.println("encode(bytes)"+encodeToString(bytes));
+    }
+    /**
+     * Used to build output as Hex
+     */
+    private static final char[] DIGITS = {
+            '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'
+    };
+
+    public static final String PREFERRED_ENCODING = "UTF-8";
+
+    public static String encodeToString(byte[] bytes) {
+        char[] encodedChars = encode(bytes);
+        return new String(encodedChars);
+    }
+
+    public static char[] encode(byte[] data){
+        int l = data.length;
+        char[] out = new char[l << 1];
+        // two characters form the hex value.
+        for (int i = 0, j = 0; i < l; i++) {
+            out[j++] = DIGITS[(0xF0 & data[i]) >>> 4];
+            out[j++] = DIGITS[0x0F & data[i]];
+        }
+        return out;
+    }
+
+    /**
+     * MD5
+     * @param algorithmName  算法名字
+     * @param source  value of input
+     * @param salt   salt （In case the password repeats ）
+     * @param hashIterations 迭代
+     * @param encoding  编码格式
+     * @return
+     * @throws NoSuchAlgorithmException   algorithmName is mismatch
+     * @throws UnsupportedEncodingException
+     */
+    public static byte[] md5withsaltToByte(String algorithmName, Object source, Object salt, int hashIterations,String encoding) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        MessageDigest digest = MessageDigest.getInstance(algorithmName);
+        if(encoding==null){
+            encoding=PREFERRED_ENCODING;
+        }
+        if (salt != null) {
+            byte[] saltBytes = toBytes(salt, encoding);
+            digest.reset();
+            digest.update(saltBytes);
+        }
+        if(source==null){
+            throw new RuntimeException("用来加密的[source]不能为空,否则失去意义!");
+        }
+        byte[] sourceBytes=toBytes(source,encoding);
+
+        byte[] hashed = digest.digest(sourceBytes);
+
+        int iterations = hashIterations - 1; //already hashed once above
+
+        //iterate remaining number:
+        for (int i = 0; i < iterations; i++) {
+            digest.reset();
+            hashed = digest.digest(hashed);
+        }
+        return hashed;
+    }
+
+    private static byte[] toBytes(Object o, String encoding) throws UnsupportedEncodingException {
+        byte[] saltBytes = new byte[0];;
+        if(o instanceof  String ){
+            saltBytes=((String)o).getBytes(encoding);
+        }else if(o instanceof char[]){
+            saltBytes=new String((char[])o).getBytes(encoding);
+        }else if(o instanceof File){
+            saltBytes=toBytes(((File) o));
+        }else if(o instanceof InputStream){
+            saltBytes=toBytes((InputStream) o);
+        }
+        return saltBytes;
+    }
+
+    protected static byte[] toBytes(File file) {
+        if (file == null) {
+            throw new IllegalArgumentException("File argument cannot be null.");
+        }
+        try {
+            return toBytes(new FileInputStream(file));
+        } catch (FileNotFoundException e) {
+            String msg = "Unable to acquire InputStream for file [" + file + "]";
+            throw new CodecException(msg, e);
+        }
+    }
+
+    protected static byte[] toBytes(InputStream in) {
+        if (in == null) {
+            throw new IllegalArgumentException("InputStream argument cannot be null.");
+        }
+        final int BUFFER_SIZE = 512;
+        ByteArrayOutputStream out = new ByteArrayOutputStream(BUFFER_SIZE);
+        byte[] buffer = new byte[BUFFER_SIZE];
+        int bytesRead;
+        try {
+            while ((bytesRead = in.read(buffer)) != -1) {
+                out.write(buffer, 0, bytesRead);
+            }
+            return out.toByteArray();
+        } catch (IOException ioe) {
+            throw new CodecException(ioe);
+        } finally {
+            try {
+                in.close();
+            } catch (IOException ignored) {
+            }
+            try {
+                out.close();
+            } catch (IOException ignored) {
+            }
+        }
+    }
+
+
+}
